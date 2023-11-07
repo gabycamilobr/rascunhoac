@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Template Bootstrap</title>
+<!-- Inclua a biblioteca Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <!-- Logotipo -->
+<div class="container text-center mt-3">
+<h1>Logotipo</h1>
+</div>
+ 
+    <!-- Barra de Navegação -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+<a class="navbar-brand" href="#">Meu Site</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.html">Página Principal</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="cadastroeletronico.html">Cadastro produto</a>
+
+</ul>
+</div>
+</div>
+</nav>
+ 
+ 
+    <!-- Cabeçalho -->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastrar
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha:</label>
+                                <input type="password" class="form-control" id="senha" name="senha" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+<!-- Rodapé -->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container p-4 pb-0">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <br>
+
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <a class="text-white" href="https://mdbootstrap.com/">R. Japão, 90 - Itaim Bibi, São Paulo - SP, 04530-070</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <style>
+    
+    .fa-facebook{
+        background-color: #345c94; /* Cor de fundo dos ícones (pode ser personalizada) */
+    }
+
+    .fa-twitter{
+    background-color: #44acec;
+    }
+    .fa-instagram{
+        background-color: #ca3d82;
+    }
+
+    .social-icons i {
+        font-size: 30px; /* Tamanho dos ícones */
+        border-radius: 50%; /* Deixa os ícones redondos */
+        padding: 10px; /* Espaçamento interno dos ícones */
+        color: white; /* Cor do ícone */
+        margin: 5px; /* Espaçamento entre os ícones */
+    }
+
+    </style>
+ 
+    <!-- Inclua a biblioteca Bootstrap JS e o jQuery para funcionalidades adicionais -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+ 
+</html>

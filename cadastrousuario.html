@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
  
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meu Template Bootstrap</title>
+<title>Cadastro Usuário</title>
 <!-- Inclua a biblioteca Bootstrap CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
  
 <body>
- 
+
+<div class="bg-light">
     <!-- Logotipo -->
 <div class="container text-center mt-3">
 <h1>Logotipo</h1>
@@ -19,7 +20,7 @@
     <!-- Barra de Navegação -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container">
-<a class="navbar-brand" href="#">Meu Site</a>
+<a class="navbar-brand" href="/index.html">Eletrônicos Plus</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -30,7 +31,7 @@
 <a class="nav-link" href="index.html">Página Principal</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="cadastroeletronico.html">Cadastro produto</a>
+<a class="nav-link" href="cadastroprodutoeletronico.html">Cadastro produto</a>
 
 </ul>
 </div>
@@ -48,14 +49,14 @@
                         Cadastrar
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="/cadastrousuario" method="post">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha" required>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                             </div>
                             <button type="submit" class="btn btn-primary">Entrar</button>
                         </form>
@@ -66,6 +67,7 @@
     </div>
     <br>
     <br>
+</div>    
 
 
 <!-- Rodapé -->

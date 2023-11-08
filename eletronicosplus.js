@@ -12,7 +12,7 @@ const port = 3000;
 
 
 //configurando o acesso ao mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/eletronicosplus',
+mongoose.connect('mongodb://127.0.0.1:27017/rascunhoac',
 {   useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS : 20000
@@ -40,7 +40,18 @@ app.post("/cadastrousuario", async(req, res)=>{
         senha : senha
     })
 
+    //testando se todos os campos foram preenchidos
+    if(email == null || senha == null){
+        return res.status(400).json({error : "Preencher todos os campos"});
+    }
 
+    //teste mais importante da ac
+    const emailExiste = await Usuario.findOne({email:email});
+
+    if(emailExiste){
+        return res.status(400).json({error : "Esse email já está registrado no sistema."});
+    }
+ 
     try{
         const newUsuario = await usuario.save();
         res.json({error : null, msg : "Cadastro ok", usuarioId : newUsuario._id});
@@ -61,9 +72,7 @@ const ProdutoeletronicoSchema = new mongoose.Schema({
     anos_garantia : {type : Number}
 });
 
-
 const Produtoeletronico = mongoose.model("Produtoeletronico", ProdutoeletronicoSchema);
-
 
 //configurando os roteamentos da model cadastroeletronico
 app.post("/cadastroprodutoeletronico", async(req, res)=>{
@@ -72,6 +81,26 @@ app.post("/cadastroprodutoeletronico", async(req, res)=>{
     const marca = req.body.marca;
     const data_fabricacao = req.body.data_fabricacao;
     const anos_garantia = req.body.anos_garantia;
+
+     // teste de limite e minimo de garantia
+     if(anos_garantia > 4){
+        return res.status(400).json({error : "O limite de garantia foi superado, não é possível cadastrar o produto"});
+    }
+    if(anos_garantia <= 0){
+        return res.status(400).json({error : "O valor deve ser positivo, não é possível cadastrar o produto"});
+    }
+
+    //testando se todos os campos foram preenchidos
+    if(id_produtoeletronico == null || descricao == null || marca == null || data_fabricacao == null || anos_garantia == null){
+        return res.status(400).json({error : "Preencher todos os campos"});
+    }
+ 
+    //verificar se já existe o id
+    const id_produtoeletronicoExiste = await Produtoeletronico.findOne({id_produtoeletronico : id_produtoeletronico});
+ 
+    if(id_produtoeletronicoExiste){
+        return res.status(400).json({error : "Esse id já está registrado no sistema."});
+    }
 
 
     //como fica no postman pra add 
@@ -93,6 +122,14 @@ app.post("/cadastroprodutoeletronico", async(req, res)=>{
 
 });
 
+
+app.get("/cadastrousuario", async(req, res)=> {
+    res.sendFile(__dirname+"/cadastrousuario.html");
+});
+
+app.get("/cadastroprodutoeletronico", async(req, res)=> {
+    res.sendFile(__dirname+"/cadastroprodutoeletronico.html");
+});
 
 //rota raiz - inicio do inw por causa da pág html
 app.get("/", async(req, res)=>{

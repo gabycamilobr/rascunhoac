@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
  
 <head>
 <meta charset="UTF-8">
@@ -10,16 +10,16 @@
 </head>
  
 <body>
- 
+<div class="bg-light">
     <!-- Logotipo -->
 <div class="container text-center mt-3">
 <h1>Logotipo</h1>
 </div>
  
     <!-- Barra de Navegação -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
 <div class="container">
-<a class="navbar-brand" href="#">Meu Site</a>
+<a class="navbar-brand" href="/index.html">Eletrônicos Plus</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,7 @@
 </div>
 </div>
 </nav>
+</div>
 
  
     <!-- Cabeçalho -->
@@ -44,27 +45,30 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        Informações do Produto
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="/cadastroprodutoeletronico" method="post">
+                            <div class="form-group">
+                                <label for="id_produtoeletronico">Id do produto:</label>
+                                <input type="number" class="form-control" id="id_produtoeletronico" name="id_produtoeletronico">
+                            </div>
                             <div class="form-group">
                                 <label for="descricao">Descrição:</label>
-                                <input type="text" class="form-control" id="descricao" name="descricao" required>
+                                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição" >
                             </div>
                             <div class="form-group">
                                 <label for="marca">Marca:</label>
-                                <input type="text" class="form-control" id="marca" name="marca" required>
+                                <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca">
                             </div>
                             <div class="form-group">
-                                <label for="dataFabricacao">Data de Fabricação:</label>
-                                <input type="date" class="form-control" id="dataFabricacao" name="dataFabricacao" required>
+                                <label for="data_fabricacao">Data de Fabricação:</label>
+                                <input type="date" class="form-control" id="data_fabricacao" name="data_fabricacao" placeholder="Data de Fabricação">
                             </div>
                             <div class="form-group">
-                                <label for="anosGarantia">Anos de Garantia:</label>
-                                <input type="number" class="form-control" id="anosGarantia" name="anosGarantia" required>
+                                <label for="anos_garantia">Anos de Garantia:</label>
+                                <input type="number" class="form-control" id="anos_garantia" name="anos_garantia" placeholder="Anos de Garantia">
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
                     </div>
                 </div>
